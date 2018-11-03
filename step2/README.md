@@ -12,7 +12,7 @@ Add the GradleRIO plugin to build.gradle
     }
 
     // define the robot class for GradleRIO
-    def ROBOT_CLASS = "org.usfirst.frc.team4183.robot"
+    def ROBOT_CLASS = "frc.robot.Robot"
 
     // Define my targets (RoboRIO) and artifacts (deployable files)
     // This is added by GradleRIO's backing project EmbeddedTools.
@@ -74,3 +74,22 @@ This will tell the wpi library what your team number and language is.
 
     BUILD SUCCESSFUL in 0s
     2 actionable tasks: 2 executed
+
+## Add Robot code
+
+Make our Robot class extend TimedRobot.
+
+    import edu.wpi.first.wpilibj.TimedRobot;
+
+    public class Robot extends TimedRobot {
+
+    ...
+
+Add an Override for robotInit to make sure our robot is being called:
+
+        @Override
+        public void robotInit() {
+            super.robotInit();
+            System.out.println("Hello Robot Init!");
+        }
+

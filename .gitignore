@@ -1,6 +1,7 @@
 .gradle
-/build/
-/bin/
+**/build/**
+**/bin/**
+**/logs/**
 .settings/
 .classpath
 .project
@@ -18,3 +19,7 @@ gradle-app.setting
 # gradle/wrapper/gradle-wrapper.properties
 
 .DS_Store
+
+.idea/
+*.iml
+*.ipr

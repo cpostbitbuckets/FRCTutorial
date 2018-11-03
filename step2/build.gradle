@@ -20,7 +20,7 @@ plugins {
 }
 
 // define the robot class for GradleRIO
-def ROBOT_CLASS = "org.usfirst.frc.team4183.robot"
+def ROBOT_CLASS = "frc.robot.Robot"
 
 // Define my targets (RoboRIO) and artifacts (deployable files)
 // This is added by GradleRIO's backing project EmbeddedTools.
@@ -42,6 +42,9 @@ deploy {
         }
     }
 }
+
+// add the simulator before our dependencies
+apply from: 'buildSrc/simulator.gradle'
 
 dependencies {
     compile wpilib()
@@ -65,3 +68,4 @@ repositories {
 
 // For easier testing, let's add a mainClassName
 mainClassName = 'frc.robot.Robot'
+
