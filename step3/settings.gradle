@@ -7,8 +7,9 @@
  * in the user guide at https://docs.gradle.org/4.9/userguide/multi_project_builds.html
  */
 
-rootProject.name = 'FRCTutorial'
-
-include 'step1'
-include 'step2'
-include 'step3'
+pluginManagement {
+    repositories {
+        mavenLocal()
+        gradlePluginPortal()
+    }
+}
