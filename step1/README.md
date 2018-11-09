@@ -1,6 +1,9 @@
 # Step 1
 
-Start with a gradle init
+## Overview
+In step 1, we will create a new FRC Robot project with a simple main function, using gradle.
+
+Start by creating a folder for your robot code, and call gradle init
 
     gradle init
 

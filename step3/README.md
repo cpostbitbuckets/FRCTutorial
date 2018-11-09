@@ -1,6 +1,7 @@
 # Step 3
 
-Let's add a Drive Subsystem
+## Overview
+In step 3, we are going to add a Drive Subsystem and 4 motors. We are going to configure those motors as if they were on a simple robot with two motors for wheels on the left and two motors for wheels on the right. We want the left motors and the right motors to work together as one motor unit.
 
 ## Create a new drive subsystem package
 

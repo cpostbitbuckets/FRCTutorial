@@ -1,6 +1,8 @@
 # Step 2
 
-It's time to do some actual Robot'ing with our robot code.
+## Overview
+
+For Step 2, we will start adding some actual Robot'ing with our robot code. This will involve adding build steps for wpilib (the FRC base libraries with all of our logic)
 
 ## Add frc support to gradle
 
@@ -100,3 +102,12 @@ Add an Override for robotInit to make sure our robot is being called:
         System.out.println("Hello Robot Init!");
     }
 ```
+
+## Simulator
+If you have configured a simulator, you can run it now:
+
+    gradle runSnobotSim
+
+You should see an empty simulator.
+
+![SnobotSim](images/step2sim.png)
