@@ -20,7 +20,13 @@ Tutorial for creating a new FRC robot from scratch.
 ## How To
 This tutorial is broken into subfolders with various steps for creating a new robot codebase from scratch. Start with step1.
 
+* [Step 1](step1/)
+* [Step 2](step2/)
+* [Step 3](step3/)
+
 ## Mac Simulator Notes
+
+**Note** This is not fully documented yet. More notes will appear here as I flesh out the simulator.
 
 Copy the pathfinder libs
 
