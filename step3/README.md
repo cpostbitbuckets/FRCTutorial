@@ -96,9 +96,9 @@ public class DriveSubsystem extends Subsystem {
 
     private final Robot robot;
     private final TalonSRX leftFrontMotor;
-	private final TalonSRX leftRearMotor;
+    private final TalonSRX leftRearMotor;
 
-	private final TalonSRX rightFrontMotor;
+    private final TalonSRX rightFrontMotor;
     private final TalonSRX rightRearMotor;
 
     public DriveSubsystem(Robot robot) {
@@ -178,8 +178,8 @@ public class Idle extends Command {
         this.driveSubsystem = driveSubsystem;
 
         // Use requires() here to declare subsystem dependencies
-    	requires(driveSubsystem);
-    	setRunWhenDisabled(true);  // Idle state runs when disabled, unlike other states
+        requires(driveSubsystem);
+        setRunWhenDisabled(true);  // Idle state runs when disabled, unlike other states
     }
 
     @Override
