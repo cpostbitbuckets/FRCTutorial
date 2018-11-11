@@ -86,7 +86,7 @@ Now that we have some constants, let's make a [DriveSubsystem](src/main/java/frc
 package frc.robot.subsystems.drive;
 
 import com.ctre.phoenix.motorcontrol.ControlMode;
-import com.ctre.phoenix.motorcontrol.can.TalonSRX;
+import com.ctre.phoenix.motorcontrol.can.WPI_TalonSRX;
 
 import edu.wpi.first.wpilibj.command.Subsystem;
 import frc.robot.Robot;
@@ -95,18 +95,18 @@ import frc.robot.RobotMap;
 public class DriveSubsystem extends Subsystem {
 
     private final Robot robot;
-    private final TalonSRX leftFrontMotor;
-    private final TalonSRX leftRearMotor;
+    private final WPI_TalonSRX leftFrontMotor;
+    private final WPI_TalonSRX leftRearMotor;
 
-    private final TalonSRX rightFrontMotor;
-    private final TalonSRX rightRearMotor;
+    private final WPI_TalonSRX rightFrontMotor;
+    private final WPI_TalonSRX rightRearMotor;
 
     public DriveSubsystem(Robot robot) {
         this.robot = robot;
-        leftFrontMotor = new TalonSRX(RobotMap.LEFT_DRIVE_MOTOR_FRONT_ID);
-        leftRearMotor = new TalonSRX(RobotMap.LEFT_DRIVE_MOTOR_REAR_ID);
-        rightFrontMotor  = new TalonSRX(RobotMap.RIGHT_DRIVE_MOTOR_FRONT_ID);
-        rightRearMotor   = new TalonSRX(RobotMap.RIGHT_DRIVE_MOTOR_REAR_ID);        
+        leftFrontMotor = new WPI_TalonSRX(RobotMap.LEFT_DRIVE_MOTOR_FRONT_ID);
+        leftRearMotor = new WPI_TalonSRX(RobotMap.LEFT_DRIVE_MOTOR_REAR_ID);
+        rightFrontMotor  = new WPI_TalonSRX(RobotMap.RIGHT_DRIVE_MOTOR_FRONT_ID);
+        rightRearMotor   = new WPI_TalonSRX(RobotMap.RIGHT_DRIVE_MOTOR_REAR_ID);        
     }
 }
 ```
@@ -144,7 +144,7 @@ Then, update your DriveSubsystem constructor to configuring these motors to be i
 ```
 
 ### Motors that follow
-The TalonSRX motors come with some helpful functionality to tell one motor to follow another. This means you can set the 
+The WPI_TalonSRX motors come with some helpful functionality to tell one motor to follow another. This means you can set the 
 speed of one motor, and any following motors will match. 
 
 ```java

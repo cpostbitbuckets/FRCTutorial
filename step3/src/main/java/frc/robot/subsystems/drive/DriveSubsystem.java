@@ -1,7 +1,7 @@
 package frc.robot.subsystems.drive;
 
 import com.ctre.phoenix.motorcontrol.ControlMode;
-import com.ctre.phoenix.motorcontrol.can.TalonSRX;
+import com.ctre.phoenix.motorcontrol.can.WPI_TalonSRX;
 
 import edu.wpi.first.wpilibj.command.Subsystem;
 import frc.robot.Robot;
@@ -10,11 +10,11 @@ import frc.robot.RobotMap;
 public class DriveSubsystem extends Subsystem {
     private final Robot robot;
 
-    private final TalonSRX leftFrontMotor;
-	private final TalonSRX leftRearMotor;
+    private final WPI_TalonSRX leftFrontMotor;
+	private final WPI_TalonSRX leftRearMotor;
 
-	private final TalonSRX rightFrontMotor;
-	private final TalonSRX rightRearMotor;
+	private final WPI_TalonSRX rightFrontMotor;
+	private final WPI_TalonSRX rightRearMotor;
 
     /**
      * Constructor for DriveSubsystem. Pass in the robot instance so we can refer to it later.
@@ -22,11 +22,11 @@ public class DriveSubsystem extends Subsystem {
     public DriveSubsystem(Robot robot) {
         this.robot = robot;
 
-        leftFrontMotor = new TalonSRX(RobotMap.LEFT_DRIVE_MOTOR_FRONT_ID);
-        leftRearMotor = new TalonSRX(RobotMap.LEFT_DRIVE_MOTOR_REAR_ID);
+        leftFrontMotor = new WPI_TalonSRX(RobotMap.LEFT_DRIVE_MOTOR_FRONT_ID);
+        leftRearMotor = new WPI_TalonSRX(RobotMap.LEFT_DRIVE_MOTOR_REAR_ID);
         
-        rightFrontMotor  = new TalonSRX(RobotMap.RIGHT_DRIVE_MOTOR_FRONT_ID);
-        rightRearMotor   = new TalonSRX(RobotMap.RIGHT_DRIVE_MOTOR_REAR_ID);
+        rightFrontMotor  = new WPI_TalonSRX(RobotMap.RIGHT_DRIVE_MOTOR_FRONT_ID);
+        rightRearMotor   = new WPI_TalonSRX(RobotMap.RIGHT_DRIVE_MOTOR_REAR_ID);
         
         leftFrontMotor.setInverted(RobotMap.LEFT_DRIVE_MOTOR_INVERSION_FLAG);
         leftRearMotor.setInverted(RobotMap.LEFT_DRIVE_MOTOR_INVERSION_FLAG);
