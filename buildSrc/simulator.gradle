@@ -1,6 +1,9 @@
 buildscript {
     repositories {
         mavenLocal()
+        maven {
+            url 'https://raw.githubusercontent.com/cpostbitbuckets/maven_repo/master'
+        }
     }
     dependencies {
         classpath "com.snobot.simulator.plugin:SnobotSimulatorPlugin:2018-2.1.0-4183"
