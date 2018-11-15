@@ -7,6 +7,12 @@ buildscript {
     }
 }
 
+repositories {
+    maven {
+        url 'https://raw.githubusercontent.com/cpostbitbuckets/maven_repo/master'
+    }
+}
+
 apply plugin: com.snobot.simulator.plugin.SnobotSimulatorPlugin
 
 ext.allwpilibVersion = {
