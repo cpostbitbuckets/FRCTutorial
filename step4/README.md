@@ -6,7 +6,7 @@ In step 3 we created a Drive Subsystem with 4 motors. The subsystem only idles. 
 The first thing we need is some logic to tell the robot to move around based on joystick inputs. Create a new method in DriveSubsystem called tankDrive(). This method will take two inputs, the forward/backward amount of the joystick, and the left/right turn amount of the joystick.
 
 ```java
-/**
+    /**
      * Drive the robot like a tank. This will take two inputs,
      * the forward joystick setting (between -1 and 1) and the
      * turn joystick setting (between -1 and 1)
@@ -36,7 +36,7 @@ The first thing we need is some logic to tell the robot to move around based on 
         
         // Set the motors based on how much we are going forward/backward and how
         // much we are steering left or right
-		leftFrontMotor.set(ControlMode.PercentOutput, forward + steer);
+        leftFrontMotor.set(ControlMode.PercentOutput, forward + steer);
         rightFrontMotor.set(ControlMode.PercentOutput, forward - steer);
         
     }
