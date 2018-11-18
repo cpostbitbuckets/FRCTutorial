@@ -25,13 +25,14 @@ ext.allwpilibVersion = {
 // override dependencies for the mac/talon simulator
 dependencies {
     compile 'org.opencv:opencv-java:3.2.0'
+    compile 'com.kauailabs.navx:navx:' + allwpilibVersion()
+    compile 'com.kauailabs.navx:navx_frc:' + allwpilibVersion()
     compile 'edu.wpi.first.ntcore:ntcore-java:' + allwpilibVersion()
     compile 'edu.wpi.first.cscore:cscore-java:' + allwpilibVersion()
     compile 'edu.wpi.first.cameraserver:cameraserver-java:' + allwpilibVersion()
     compile 'edu.wpi.first.hal:hal-java:' + allwpilibVersion()
     compile 'edu.wpi.first.wpilibj:wpilibj-java:' + allwpilibVersion()
     compile 'edu.wpi.first.wpiutil:wpiutil-java:' + allwpilibVersion()
-    compile 'com.kauailabs.navx:navx_frc:2018.1.0-4183'
     compile 'jaci.pathfinder:Pathfinder-Java:1.8'
     compile 'org.scream3r:jssc:2.8.0'
     compile "openrio.mirror.third.ctre:CTRE-phoenix-java:" + allwpilibVersion()
