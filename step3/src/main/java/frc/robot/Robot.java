@@ -11,7 +11,7 @@ public class Robot extends TimedRobot {
     public void robotInit() {
         super.robotInit();
 
-        driveSubsystem = new DriveSubsystem(this);
+        driveSubsystem = new DriveSubsystem();
     }
 
     @Override

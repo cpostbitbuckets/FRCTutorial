@@ -22,10 +22,9 @@ import frc.robot.Robot;
 public class DriveSubsystem extends Subsystem {
 
     /**
-     * Constructor for DriveSubsystem. Pass in the robot instance so we can refer to it later.
+     * Constructor for DriveSubsystem.
      */
-    public DriveSubsystem(Robot robot) {
-        this.robot = robot;
+    public DriveSubsystem() {;
     }
 }
 ```
@@ -47,7 +46,7 @@ In the Robot class, create a new instance of the DriveSubsystem in the robotInit
     public void robotInit() {
         super.robotInit();
 
-        driveSubsystem = new DriveSubsystem(this);
+        driveSubsystem = new DriveSubsystem();
     }
 
 ```
@@ -94,14 +93,13 @@ import frc.robot.RobotMap;
 
 public class DriveSubsystem extends Subsystem {
 
-    private final Robot robot;
     private final WPI_TalonSRX leftFrontMotor;
     private final WPI_TalonSRX leftRearMotor;
 
     private final WPI_TalonSRX rightFrontMotor;
     private final WPI_TalonSRX rightRearMotor;
 
-    public DriveSubsystem(Robot robot) {
+    public DriveSubsystem() {
         this.robot = robot;
         leftFrontMotor = new WPI_TalonSRX(RobotMap.LEFT_DRIVE_MOTOR_FRONT_ID);
         leftRearMotor = new WPI_TalonSRX(RobotMap.LEFT_DRIVE_MOTOR_REAR_ID);

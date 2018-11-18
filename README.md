@@ -5,6 +5,7 @@ Tutorial for creating a new FRC robot from scratch.
 
 * Install Visual Studio Code
 * Install java extensions and wpi lib extensions
+* Install the gradle Vistual Studio Code plugin
 
 ## Goals
 
@@ -23,12 +24,5 @@ This tutorial is broken into subfolders with various steps for creating a new ro
 * [Step 1](step1/)
 * [Step 2](step2/)
 * [Step 3](step3/)
-
-## Mac Simulator Notes
-
-**Note** This is not fully documented yet. More notes will appear here as I flesh out the simulator.
-
-Copy the pathfinder libs
-
-    cp ../../Pathfinder/Pathfinder-Java/build/libs/pathfinderjava/shared/any64/* build/native_libs
+* [Step 4](step4/)
 

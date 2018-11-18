@@ -6,7 +6,6 @@ public class Robot extends TimedRobot {
 
     @Override
     public void robotInit() {
-        super.robotInit();
         System.out.println("Hello Robot Init!");
     }
 }

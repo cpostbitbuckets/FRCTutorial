@@ -8,8 +8,6 @@ import frc.robot.Robot;
 import frc.robot.RobotMap;
 
 public class DriveSubsystem extends Subsystem {
-    private final Robot robot;
-
     private final WPI_TalonSRX leftFrontMotor;
 	private final WPI_TalonSRX leftRearMotor;
 
@@ -19,9 +17,7 @@ public class DriveSubsystem extends Subsystem {
     /**
      * Constructor for DriveSubsystem. Pass in the robot instance so we can refer to it later.
      */
-    public DriveSubsystem(Robot robot) {
-        this.robot = robot;
-
+    public DriveSubsystem() {
         leftFrontMotor = new WPI_TalonSRX(RobotMap.LEFT_DRIVE_MOTOR_FRONT_ID);
         leftRearMotor = new WPI_TalonSRX(RobotMap.LEFT_DRIVE_MOTOR_REAR_ID);
         
@@ -48,11 +44,4 @@ public class DriveSubsystem extends Subsystem {
         idle.start();
     }
     
-    /**
-     * @return the robot
-     */
-    public Robot getRobot() {
-        return robot;
-    }
-
 }

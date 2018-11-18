@@ -16,13 +16,7 @@ public class Idle extends Command {
     }
 
     @Override
-    protected boolean isFinished() {
-    	 if(this.driveSubsystem.getRobot().getRunMode() == Robot.RunMode.TELEOP) {
-             DriverControl driverControl = new DriverControl(this.driveSubsystem);
-             driverControl.start();
-         }
-    
-        // we are not done until the driver takes control
+    protected boolean isFinished() {   
         return false;
     }
 
