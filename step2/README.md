@@ -65,6 +65,18 @@ repositories {
     mavenLocal()
     jcenter()
 }
+
+// Force Java 8 Compatibility mode for deployed code, in case the develoment
+// system is using Java 10.
+compileJava {
+    sourceCompatibility = 1.8
+    targetCompatibility = 1.8
+}
+
+wrapper {
+    gradleVersion = '4.9'
+}
+
 ```
 
 ## Add wpilib_preferences.json
