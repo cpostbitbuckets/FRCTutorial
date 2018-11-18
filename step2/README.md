@@ -6,11 +6,19 @@ For Step 2, we will start adding some actual Robot'ing with our robot code. This
 
 ## Add frc support to gradle
 
-Add the GradleRIO plugin to build.gradle
+Add the GradleRIO plugin to build.gradle. Now that we are doing a robot rather than just a simple java application, remove the java-application plugin, and mainClassName stuff.
 
 ```gradle
+buildscript {
+    repositories {
+        mavenLocal()
+    }
+}
+
+// We are a java-library because we build a jar file, but
+// we also require the GradleRio plugin for robot stuff
 plugins {
-    ...
+    id "java-library"
     id "edu.wpi.first.GradleRIO" version "2019.0.0-alpha-3"
 }
 
@@ -51,6 +59,12 @@ jar {
     from configurations.compile.collect { it.isDirectory() ? it : zipTree(it) }
     manifest edu.wpi.first.gradlerio.GradleRIOPlugin.javaManifest(ROBOT_CLASS)
 }
+
+// Add a local and remote repository to fetch dependencies from
+repositories {
+    mavenLocal()
+    jcenter()
+}
 ```
 
 ## Add wpilib_preferences.json
@@ -64,47 +78,49 @@ Create a new .wpilib/ directory in your project and add wpilib_preferences.json 
 }
 ```
 
-This will tell the wpi library what your team number and language is.
-
-## Test your robot to make sure it still runs
-
-    gradle run
-
-    > Configure project :
-    NOTE: You are using an ALPHA version of GradleRIO, designed for the 2019 Season!
-    This release uses the 2018 Core Libraries, however all tooling (GradleRIO + IDE support) is incubating for 2019
-    If you encounter any issues and/or bugs, please report them to https://github.com/wpilibsuite/GradleRIO
-
-    > Task :run
-    Hello, Robot
-
-    BUILD SUCCESSFUL in 0s
-    2 actionable tasks: 2 executed
+This will tell the wpi library what your team number and programming language is.
 
 ## Add Robot code
 
-Make our Robot class extend TimedRobot.
+Modify our Robot class to make it extend TimedRobot, and override robotInit so we know our stuff is working.
+
+While in the Robot.java file, remove the static main function. We don't need it anymore.
 
 ```java
+package frc.robot;
+
 import edu.wpi.first.wpilibj.TimedRobot;
 
 public class Robot extends TimedRobot {
 
-...
-```
-
-Add an Override for robotInit to make sure our robot is being called:
-
-```java
     @Override
     public void robotInit() {
         super.robotInit();
         System.out.println("Hello Robot Init!");
     }
+}
 ```
 
 ## Simulator
-If you have configured a simulator, you can run it now:
+It's always nice to test your code before you deploy it to an actual robot. Let's configure the Snobot Simulator for testing. I have created a custom gradle file that sets up the simulator with team 4183 specific versions of wpilib, snobotSim, ctre, and navx.
+
+Update your build.gradle file with the following apply statement, before the dependencies block:
+
+```gradle
+...
+
+// add the simulator before our dependencies
+apply from: 'https://raw.githubusercontent.com/cpostbitbuckets/FRCTutorial/master/buildSrc/simulator.gradle'
+
+dependencies {
+    compile wpilib()
+    compile ctre()
+
+...
+
+```
+
+To run the simulator, call the following:
 
     gradle runSnobotSim
 

@@ -9,8 +9,4 @@ public class Robot extends TimedRobot {
         super.robotInit();
         System.out.println("Hello Robot Init!");
     }
-
-    public static void main(String[] args) {
-        System.out.println("Hello, Robot");
-    }
 }

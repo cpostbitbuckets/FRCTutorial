@@ -12,10 +12,10 @@ buildscript {
     }
 }
 
-// Start with a java-library plugin, we are building a jar file
+// We are a java-library because we build a jar file, but
+// we also require the GradleRio plugin for robot stuff
 plugins {
     id "java-library"
-    id "application"
     id "edu.wpi.first.GradleRIO" version "2019.0.0-alpha-3"
 }
 
@@ -44,7 +44,7 @@ deploy {
 }
 
 // add the simulator before our dependencies
-apply from: '../buildSrc/simulator.gradle'
+apply from: 'https://raw.githubusercontent.com/cpostbitbuckets/FRCTutorial/master/buildSrc/simulator.gradle'
 
 dependencies {
     compile wpilib()
@@ -65,7 +65,3 @@ repositories {
     mavenLocal()
     jcenter()
 }
-
-// For easier testing, let's add a mainClassName
-mainClassName = 'frc.robot.Robot'
-
